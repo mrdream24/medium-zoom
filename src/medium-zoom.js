@@ -13,7 +13,6 @@ const mediumZoom = (selector, {
   scrollOffset = 48,
   metaClick = true
 } = {}) => {
-  require('./medium-zoom.css')
 
   const SUPPORTED_FORMATS = [ 'IMG', 'PICTURE', 'SVG' ]
   const KEY_ESC = 27
@@ -175,7 +174,7 @@ const mediumZoom = (selector, {
     if (!target) return
 
     const windowWidth = document.body.clientWidth || window.innerWidth
-    const windowHeight = document.body.clientHeight || window.innerHeight
+    const windowHeight = document.documentElement.clientHeight || window.innerHeight
 
     const viewportWidth = windowWidth - options.margin * 2
     const viewportHeight = windowHeight - options.margin * 2

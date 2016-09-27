@@ -1,13 +1,11 @@
 {
-  "name": "medium-zoom",
-  "version": "0.1.0",
+  "name": "medium-zoom-juejin",
+  "version": "0.2.0",
   "description": "Medium-like zoom on your pictures in pure JavaScript",
   "license": "MIT",
   "repository": "francoischalifour/medium-zoom",
   "author": {
-    "name": "Francois Chalifour",
-    "email": "francois.chalifour@gmail.com",
-    "url": "http://francoischalifour.com"
+    "name": "mrdream"
   },
   "main": "src/medium-zoom.js",
   "scripts": {
