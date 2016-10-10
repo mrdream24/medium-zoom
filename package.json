@@ -1,13 +1,13 @@
 {
   "name": "medium-zoom-juejin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Medium-like zoom on your pictures in pure JavaScript",
   "license": "MIT",
   "repository": "francoischalifour/medium-zoom",
   "author": {
     "name": "mrdream"
   },
-  "main": "src/medium-zoom.js",
+  "main": "dist/medium-zoom.js",
   "scripts": {
     "lint": "./node_modules/.bin/standard",
     "clean": "./node_modules/.bin/rimraf ./dist && mkdir dist",
