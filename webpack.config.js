@@ -8,7 +8,7 @@ const pkg = require('./package.json')
 const env = process.env.NODE_ENV
 
 const plugins = []
-const libraryName = pkg.name
+const libraryName = 'medium-zoom'
 const banner = `
    ${libraryName} v${pkg.version}
    ${pkg.description}
@@ -17,7 +17,7 @@ const banner = `
    ${pkg.license} license
 `
 
-let outputFile
+var outputFile
 
 plugins.push(new webpack.BannerPlugin(banner))
 

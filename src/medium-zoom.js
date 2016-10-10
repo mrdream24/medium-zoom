@@ -13,7 +13,6 @@ const mediumZoom = (selector, {
   scrollOffset = 48,
   metaClick = true
 } = {}) => {
-
   const SUPPORTED_FORMATS = [ 'IMG', 'PICTURE', 'SVG' ]
   const KEY_ESC = 27
   const KEY_Q = 81
@@ -235,5 +234,5 @@ const mediumZoom = (selector, {
 if (typeof window !== 'undefined') {
   window.mediumZoom = mediumZoom
 } else if (module && module.exports) {
-    module.exports = mediumZoom
+  module.exports = mediumZoom
 }
