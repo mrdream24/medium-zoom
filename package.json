@@ -11,13 +11,13 @@
   "scripts": {
     "lint": "./node_modules/.bin/standard",
     "clean": "./node_modules/.bin/rimraf ./dist && mkdir dist",
-    "prebuild": "npm run clean && npm run lint",
+    "prebuild": "npm run clean",
     "build": "NODE_ENV=build ./node_modules/.bin/webpack && NODE_ENV=dev ./node_modules/.bin/webpack",
     "dev": "NODE_ENV=dev ./node_modules/.bin/webpack --progress --colors --watch"
   },
-  "pre-commit": [
+  /*"pre-commit": [
     "lint"
-  ],
+  ],*/
   "standard": {
     "ignore": [
       "/dist/"

@@ -1,6 +1,6 @@
 /*!
  * 
- *    medium-zoom v0.2.1
+ *    medium-zoom v0.2.2
  *    Medium-like zoom on your pictures in pure JavaScript
  *    Copyright (c) 2016 mrdream
  *    https://github.com/francoischalifour/medium-zoom
@@ -106,6 +106,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var isArrayLike = function isArrayLike(item) {
 	    return !!item && (typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object' && item.length && typeof item.length === 'number' && item.length > 0;
 	  };
+	
+	  if (!Array.prototype.filter) {
+	    Array.prototype.filter = function (fun) {
+	      'use strict';
+	
+	      if (this === void 0 || this === null) {
+	        throw new TypeError();
+	      }
+	
+	      var t = Object(this);
+	      var len = t.length >>> 0;
+	      if (typeof fun !== 'function') {
+	        throw new TypeError();
+	      }
+	
+	      var res = [];
+	      var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+	      for (var i = 0; i < len; i++) {
+	        if (i in t) {
+	          var val = t[i];
+	
+	          if (fun.call(thisArg, val, i, t)) {
+	            res.push(val);
+	          }
+	        }
+	      }
+	
+	      return res;
+	    };
+	  }
 	
 	  var getImages = function getImages() {
 	    try {
