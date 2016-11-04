@@ -109,7 +109,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  var getImages = function getImages() {
 	    try {
-	      return Array.isArray(selector) ? selector.filter(isSupported) : isArrayLike(selector) ? [].concat(_toConsumableArray(selector)).filter(isSupported) : typeof selector === 'string' ? [].concat(_toConsumableArray(document.querySelectorAll(selector))).filter(isSupported) : [].concat(_toConsumableArray(document.querySelectorAll(SUPPORTED_FORMATS.map(function (attr) {
+	      return Array.isArray(selector) ? selector.filter(isSupported()) : isArrayLike(selector) ? [].concat(_toConsumableArray(selector)).filter(isSupported()) : typeof selector === 'string' ? [].concat(_toConsumableArray(document.querySelectorAll(selector))).filter(isSupported()) : [].concat(_toConsumableArray(document.querySelectorAll(SUPPORTED_FORMATS.map(function (attr) {
 	        return attr.toLowerCase();
 	      }).join(',')))).filter(isScaled);
 	    } catch (err) {

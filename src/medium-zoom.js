@@ -29,11 +29,11 @@ const mediumZoom = (selector, {
   const getImages = () => {
     try {
       return Array.isArray(selector)
-        ? selector.filter(isSupported)
+        ? selector.filter(isSupported())
         : isArrayLike(selector)
-          ? [...selector].filter(isSupported)
+          ? [...selector].filter(isSupported())
           : typeof selector === 'string'
-            ? [...document.querySelectorAll(selector)].filter(isSupported)
+            ? [...document.querySelectorAll(selector)].filter(isSupported())
             : [...document.querySelectorAll(
                 SUPPORTED_FORMATS.map(attr => attr.toLowerCase()).join(',')
               )].filter(isScaled)
