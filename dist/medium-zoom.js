@@ -1,6 +1,6 @@
 /*!
  * 
- *    medium-zoom v0.2.2
+ *    medium-zoom v0.2.4
  *    Medium-like zoom on your pictures in pure JavaScript
  *    Copyright (c) 2016 mrdream
  *    https://github.com/francoischalifour/medium-zoom
@@ -107,42 +107,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return !!item && (typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object' && item.length && typeof item.length === 'number' && item.length > 0;
 	  };
 	
-	  if (!Array.prototype.filter) {
-	    Array.prototype.filter = function (fun) {
-	      'use strict';
-	
-	      if (this === void 0 || this === null) {
-	        throw new TypeError();
-	      }
-	
-	      var t = Object(this);
-	      var len = t.length >>> 0;
-	      if (typeof fun !== 'function') {
-	        throw new TypeError();
-	      }
-	
-	      var res = [];
-	      var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
-	      for (var i = 0; i < len; i++) {
-	        if (i in t) {
-	          var val = t[i];
-	
-	          if (fun.call(thisArg, val, i, t)) {
-	            res.push(val);
-	          }
-	        }
-	      }
-	
-	      return res;
-	    };
-	  }
-	
 	  var getImages = function getImages() {
 	    try {
 	      return Array.isArray(selector) ? selector.filter(isSupported) : isArrayLike(selector) ? [].concat(_toConsumableArray(selector)).filter(isSupported) : typeof selector === 'string' ? [].concat(_toConsumableArray(document.querySelectorAll(selector))).filter(isSupported) : [].concat(_toConsumableArray(document.querySelectorAll(SUPPORTED_FORMATS.map(function (attr) {
 	        return attr.toLowerCase();
 	      }).join(',')))).filter(isScaled);
 	    } catch (err) {
+	      console.log(err);
 	      throw new SyntaxError('[medium-zoom] Unknown selector when applying the zoom.' + 'Expects a CSS selector, an array-like or an array.' + 'Check https://github.com/francoischalifour/medium-zoom for more.');
 	    }
 	  };
