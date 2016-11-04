@@ -15,9 +15,6 @@
     "build": "NODE_ENV=build ./node_modules/.bin/webpack && NODE_ENV=dev ./node_modules/.bin/webpack",
     "dev": "NODE_ENV=dev ./node_modules/.bin/webpack --progress --colors --watch"
   },
-  /*"pre-commit": [
-    "lint"
-  ],*/
   "standard": {
     "ignore": [
       "/dist/"
